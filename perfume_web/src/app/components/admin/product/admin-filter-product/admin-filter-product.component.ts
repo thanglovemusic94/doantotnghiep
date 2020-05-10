@@ -90,6 +90,7 @@ export class AdminFilterProductComponent implements OnInit {
     });
     minPrice = FILTER_CONST.minPrice;
     maxPrice = FILTER_CONST.maxPrice;
+
     options: Options = {
         floor: FILTER_CONST.minPrice,
         ceil: FILTER_CONST.maxPrice,
