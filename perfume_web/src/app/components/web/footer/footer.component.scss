@@ -19,7 +19,7 @@
 .social-button i{
   width: 40px;
     height: 40px;
-    background: #dbcc8f;
+    background: #e96740;
     color: #fff;
     border-radius: 100%;
     font-size: 20px;
@@ -45,9 +45,9 @@
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    border: 2px solid rgba(30, 30, 30, 0.4);
+    border: 2px solid #fbff00;
     opacity: .1;
-    border-color: rgb(74, 91, 97);
+    border-color: #fbff00;
     opacity: .5;
 }
 .alo-circle-fill {
@@ -69,7 +69,7 @@
     -moz-border-radius: 100%;
     border-radius: 100%;
     border: 2px solid transparent;
-    background-color: #c9c09f;
+    background-color: #cf3535;
     opacity: .75;
 }
 .call-icon:hover > span, .mes:hover > span, .sms:hover > span, .zalo:hover > span{display: block}
@@ -82,7 +82,7 @@
     width: 180px;
     margin-left: 10px;
     position: absolute;
-    color: #ffffff;
+    color: #fbff00;
     z-index: 999;
     top: 9px;
     left: 40px;
