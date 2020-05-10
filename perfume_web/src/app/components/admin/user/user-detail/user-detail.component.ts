@@ -120,6 +120,27 @@ export class UserDetailComponent implements OnInit {
         return tmp;
     }
 
+    reset() {
+        if (this.userEdit !== null) {
+            this.selectedItems = this.userEdit.roles;
+            this.addValueInForm();
+            this.imageDefault = getImg(this.userEdit.image);
+        }
+        else {
+            this.userFormGroup.setValue({
+                id: '',
+                username: '',
+                firstname: '',
+                lastname: '',
+                password: '',
+                email: '',
+                phone: '',
+                address: '',
+            });
+            this.selectedItems = [];
+        }
+    }
+
     save() {
         const tmp: User = this.userFormGroup.value;
         tmp.roles = this.selectedItems;

@@ -200,7 +200,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-4 col-form-label">Nick name</label>
+                    <label class="col-4 col-form-label">Username</label>
                     <div class="col-8">
                         <input [readonly]="isUpdate" placeholder="username" class="form-control"
                                [formControl]="userFormGroup.get('username')"/>
@@ -239,14 +239,14 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-danger" *ngIf="isSave()" (click)="modal.close('save')">
-            save
+            Lưu
         </button>
         <button
                 type="button"
                 class="btn btn-secondary"
                 (click)="modal.close('Close')"
         >
-            close
+            Hủy
         </button>
     </div>
 </ng-template>

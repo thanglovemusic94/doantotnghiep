@@ -55,8 +55,23 @@ export class UserComponent implements OnInit {
     }
 
     search() {
-        this.paging.page = 1;
-        this.loadAll();
+        const parameters = {
+            username: this.txtSearch
+        };
+        if (this.txtSearch == undefined || this.txtSearch == '') {
+            this.loadAll()
+        } else {
+            this.userService.findByUserName(this.txtSearch).subscribe(res => {
+                if (res.status === 200) {
+                    this.users = [];
+                    this.users.push(res.body)
+                    console.log(this.users)
+                    this.paging.total = 1;
+                } else {
+                    console.warn('can not find user');
+                }
+            });
+        }
     }
 
     loadAll() {

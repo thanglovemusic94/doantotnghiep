@@ -14,6 +14,8 @@ import com.perfume.entity.User;
 import com.perfume.sercurity.JwtToken;
 import com.perfume.sercurity.JwtUserDetailsService;
 import com.perfume.util.UploadFileUtil;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -126,6 +128,17 @@ public class UserController {
             throw new ValidationException("user does not exist");
         }
         return ResponseEntity.ok(userMapper.toDTO(user.get()));
+    }
+    
+    @GetMapping("/find/{username}")
+    public ResponseEntity<UserDTO> getByUsername(@PathVariable String username) {
+    	User user = userRepository.findByUsername(username);
+        if (user == null || username.equals("admin")) {
+            return null;
+        }
+    	
+    	UserDTO returnValue = new ModelMapper().map(user, UserDTO.class);
+        return ResponseEntity.ok(returnValue);
     }
 
     // end crud

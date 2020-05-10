@@ -27,6 +27,12 @@ export class UserService {
             .get<PagingResponse>(`${this.resourceUrl}`, {params: options, observe: 'response'});
     }
 
+    
+    findByUserName(username: string): Observable<EntityResponseType> {
+        return this.http
+            .get<User>(`${this.resourceUrl}/find/${username}`, {observe: 'response'});
+    }
+
     filterAll(filter?: any): Observable<EntityArrayResponseType> {
         if (filter == null) {
             filter = {};
