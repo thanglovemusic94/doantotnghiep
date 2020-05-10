@@ -83,5 +83,9 @@ export class BlogSingleComponent implements OnInit {
         return `${SERVER_API_IMAGE}${urlImg}`;
     }
 
+    redirectTo(uri:string){
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+        this.router.navigate([uri]));
+    }
 
 }

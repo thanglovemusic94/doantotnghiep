@@ -71,4 +71,9 @@ export class FooterComponent implements OnInit {
         return getImg(url);
     }
 
+    redirectTo(uri:string){
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+        this.router.navigate([uri]));
+    }
+
 }
