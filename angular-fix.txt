@@ -1,0 +1,8 @@
+ng update @angular/compiler-cli
+
+
+import {BsDropdownModule} from "ngx-bootstrap/dropdown";
+import {CollapseModule} from "ngx-bootstrap/collapse";
+import {PaginationModule} from "ngx-bootstrap/pagination";
+
+import {CollapseDirective} from 'ngx-bootstrap/collapse';
