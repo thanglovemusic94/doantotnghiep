@@ -83,8 +83,13 @@ public class UserController {
         userSave.setFirstname(body.getFirstname());
         userSave.setLastname(body.getLastname());
         userSave.setAddress(body.getAddress());
+        userSave.setEmail(body.getEmail());
         userSave.setPhone(body.getPhone());
-        userSave.setRoles(body.getRoles());
+        if (body.getRoles() != null) {
+        	userSave.setRoles(body.getRoles());
+        } else {
+        	userSave.setRoles(userSave.getRoles());
+        }
         userRepository.save(userSave);
         return ResponseEntity.ok(responseMsg);
     }

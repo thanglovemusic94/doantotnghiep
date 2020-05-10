@@ -68,7 +68,7 @@ export class AdminLayoutComponent {
             firstname: [this.userLogin.firstname, [Validators.required]],
             lastname: [this.userLogin.lastname, [Validators.required]],
             email: [this.userLogin.email, [Validators.required, Validators.email]],
-            phone: [this.userLogin.phone, [Validators.required]],
+            phone: [this.userLogin.phone, [Validators.required, Validators.pattern('0[0-9\s.-]{9,13}')]],
             address: [this.userLogin.address, [Validators.required]],
             imageBase64: []
         });
@@ -159,6 +159,10 @@ export class AdminLayoutComponent {
             };
             reader.readAsDataURL(fileInput.target.files[0]);
         }
+    }
+
+    isSave() {
+        return !this.userFormGroup.invalid
     }
 
     save() {

@@ -33,7 +33,7 @@
                             <a style="cursor: pointer" class="dropdown-item" (click)="logout()">Logout</a>
                         </div>
 
-                        <span *ngIf="!userLogin" class="text"><a [routerLink]="['/register']">Đăng Ký</a>&nbsp;&nbsp;<a
+                        <span *ngIf="!userLogin" class="text"><a [routerLink]="['/register']">Đăng Ký /</a>&nbsp;&nbsp;<a
                                 [routerLink]="['/login']">Đăng Nhập</a></span>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                 <div class="row mb-3">
                     <label class="col-4 col-form-label">Email</label>
                     <div class="col-8">
-                        <input placeholder="email" class="form-control"
+                        <input [readonly]="isUpdate" placeholder="email" class="form-control"
                                [formControl]="userFormGroup.get('email')"/>
                     </div>
                 </div>
@@ -238,7 +238,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="modal.close('save')">
+        <button type="button" class="btn btn-danger" *ngIf="isSave()" (click)="modal.close('save')">
             save
         </button>
         <button

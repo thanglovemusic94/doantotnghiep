@@ -168,6 +168,10 @@ export class HeaderComponent implements OnInit {
         });
     }
 
+    isSave() {
+        return !this.userFormGroup.invalid
+    }
+
     save() {
         const tmp: User = this.userFormGroup.value;
         tmp.roles = this.selectedItems;
@@ -212,7 +216,7 @@ export class HeaderComponent implements OnInit {
             firstname: [null, [Validators.required]],
             lastname: [null, [Validators.required]],
             email: [null, [Validators.required, Validators.email]],
-            phone: [null, [Validators.required]],
+            phone: [null, [Validators.required, Validators.pattern('0[0-9\s.-]{9,13}')]],
             address: [null, [Validators.required]],
             imageBase64: []
         });
