@@ -116,7 +116,7 @@ export class UserDetailComponent implements OnInit {
     isSave() {
         const tmp =
             !this.userFormGroup.invalid &&
-            (this.isUpdate ? true : this.isImageSaved);
+            (this.isUpdate ? true : this.isImageSaved) && this.selectedItems.length > 0;
         return tmp;
     }
 
@@ -136,6 +136,7 @@ export class UserDetailComponent implements OnInit {
                 email: '',
                 phone: '',
                 address: '',
+                imageBase64: null,
             });
             this.selectedItems = [];
         }

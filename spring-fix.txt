@@ -1,9 +1,0 @@
-Sửa username và password mysql
-Tạo database nếu chưa có
-Thay đường dẫn file uploads
-Chuyển sang dạng update khi tương tác với database
-
-# mail
-mail.username=500ping.test@gmail.com
-mail.password=concuakycuc
-mail.file-content=content-mail/hello.html
