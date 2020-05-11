@@ -1,14 +1,14 @@
-<div class="row p-4">
-    <div class="input-group mb-3">
+<div class="row p-2">
+    <div class="input-group">
                                 <textarea [(ngModel)]="contentComment" rows="3" class="form-control"
-                                          placeholder="Recipient's username" aria-label="Recipient's username"
+                                          placeholder="nhập bình luận" aria-label="Recipient's username"
                                           aria-describedby="basic-addon2"></textarea>
         <div (click)="sendComment()" class="input-group-append" style="cursor: pointer">
             <span class="input-group-text" id="basic-addon2">Gửi Bình Luận</span>
         </div>
     </div>
 </div>
-<div class="row p-4">
+<div class="row p-2">
     <div class="col-md-12">
         <h3 class="mb-4">{{paging.total}} Bình luận</h3>
         <div class="review" *ngFor="let item of comments" style="margin-bottom: 3rem">
@@ -21,7 +21,7 @@
                 </h4>
                 <p>{{item.content}}</p>
                 <a (click)="showInputComment(item)"
-                   style="float: right;transition: .3s all ease;color: #dbcc8f; cursor: pointer">Trả
+                   style="float: right;transition: .3s all ease;color: #454b44; cursor: pointer">Trả
                     lời bình luận</a>
 
 
