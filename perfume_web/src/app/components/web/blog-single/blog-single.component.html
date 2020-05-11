@@ -13,6 +13,12 @@
         <div class="row">
             <div class="col-lg-8 ftco-animate fadeInUp ftco-animated">
                 <h2 class="mb-3">{{news.title}}</h2>
+                
+                <!-- https://developers.facebook.com/docs/plugins/like-button/ -->
+                <div class="fb-like" [data-href]="'localhost:4200/blog/' + news.url" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                <!-- https://developers.zalo.me/docs/social/zalo-chat-widget -->
+                <div class="zalo-share-button" style="top: 5px;
+    position: relative;     margin-left: 5px;" data-href="" data-oaid="579745863508352884" data-layout="1" data-color="blue" data-customize=false></div>
                 <p style="font-style: italic;font-size: 16px">{{news.description}}</p>
                 <p>
                     <img [src]="getBackgroundImage(news.image)" alt="" class="img-fluid">
@@ -23,8 +29,9 @@
                 <div class="row">
                     <div class="col-12" [innerHTML]="news.content"></div>
                 </div>
-
-
+                <!-- bình luận facebook https://developers.facebook.com/docs/plugins/comments# -->
+                <!-- <div class="fb-comments" data-href="http://localhost:4200/blog/ + {{news.title}}"  data-numposts="5" data-width=""></div> -->
+                
                 <div class="pt-5 mt-5 row">
                     <div class="col-12">
                         <app-show-comment [postId]="news.id" [type]="COMMENT_TYPE.NEWS"></app-show-comment>

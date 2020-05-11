@@ -36,6 +36,7 @@
                                 style="color: #bbb;"> sản phẩm đã bán</span></a>
                     </p>
                 </div>
+
                 <p class="price"><span>{{versionSelect?.price | currency:'VND':''}} VNĐ</span></p>
 
                 <div class="row">
@@ -103,11 +104,17 @@
                 <p><a style="color:#fff" (click)="addCartItem()" class="btn btn-black py-3 px-5 mr-2">Thêm vào giỏ hàng</a>
                     <a (click)="addCartItem(true)"
                        class="btn btn-primary py-3 px-5">Mua ngay</a></p>
+
+                        <!-- https://developers.facebook.com/docs/plugins/like-button/ -->
+                <div class="fb-like" data-href="http://localhost:4200/blog/mach-ban-cach-chon-nuoc-hoa-phu-hop-voi-hoan-canh-lan-tinh-cach--the-gioi-nuoc-hoa" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                <!-- https://developers.zalo.me/docs/social/zalo-chat-widget -->
+                <div class="zalo-share-button" style="top: 5px;
+    position: relative;     margin-left: 5px;" data-href="" data-oaid="579745863508352884" data-layout="1" data-color="blue" data-customize=false></div>
             </div>
         </div>
 
 
-        <div class="row mt-5">
+        <div class="row mt-2">
             <div class="col-md-12 nav-link-wrap">
                 <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist"
                      aria-orientation="vertical">
