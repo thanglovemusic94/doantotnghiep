@@ -143,6 +143,7 @@ public class MailUtils {
 
         String content = "<a href='http://localhost:4200/confirm-account?token=" + token + "'>http://localhost:4200/confirm-account?token=" + token + "</a>";
 
+        mailMessage.setFrom(new InternetAddress(APP_EMAIL));
         mailMessage.setContent(content, "text/html; charset=utf-8");
 
         Transport transport = getMailSession.getTransport("smtp");
@@ -164,6 +165,8 @@ public class MailUtils {
 
 
         mailMessage.setSubject("Trạng thái đơn hàng - Perfume", "utf-8");
+        
+        mailMessage.setFrom(new InternetAddress(APP_EMAIL));
 
         String emailBody = setData(checkout);
         mailMessage.setContent(emailBody, "text/html; charset=utf-8");
